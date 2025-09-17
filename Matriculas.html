@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matrículas - Colégio Pitágoras</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+
+    <header class="main-header">
+        <div class="container header-content">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="https://i.ibb.co/YnMkHtC/20250917-053102.png" alt="Logo do Colégio">
+                    <h1>Colégio Pitágoras</h1>
+                </a>
+            </div>
+            <nav class="main-nav">
+                <button class="nav-toggle" aria-label="Abrir Menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <ul class="nav-menu">
+                    <li><a href="index.html#home">Início</a></li>
+                    <li><a href="cursos.html">Cursos</a></li>
+                    <li><a href="#">Matrículas</a></li>
+                    <li><a href="index.html#precos">Preços</a></li>
+                    <li><a href="index.html#hypermanage">Hypermanage</a></li>
+                    <li><a href="index.html#localizacao">Localização</a></li>
+                </ul>
+            </nav>
+            <div class="theme-switch-wrapper">
+                <label class="theme-switch" for="checkbox">
+                    <input type="checkbox" id="checkbox" aria-label="Alternar Tema Claro/Escuro" />
+                    <div class="slider round"></div>
+                </label>
+                <span class="theme-text"><i class="fas fa-moon"></i> / <i class="fas fa-sun"></i></span>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="matriculas-page" class="info-section">
+            <div class="container">
+                <h2>Processo de Matrícula</h2>
+                <p class="section-description">Confira o processo de matrícula e a documentação necessária para garantir a vaga de seu filho em nosso colégio.</p>
+                
+                <div class="step-by-step">
+                    <div class="step-card">
+                        <span class="step-number">1</span>
+                        <h4>Requisitos e Elegibilidade</h4>
+                        <p>Verifique se o seu perfil atende aos requisitos do curso desejado. Consulte a disponibilidade de vagas para a turma.</p>
+                    </div>
+                    <div class="step-card">
+                        <span class="step-number">2</span>
+                        <h4>Documentação Necessária</h4>
+                        <p>Prepare todos os documentos exigidos para o processo. Clique no botão abaixo para ver a lista completa.</p>
+                        <a href="#documentacao" class="btn secondary-btn">Ver Documentos</a>
+                    </div>
+                    <div class="step-card">
+                        <span class="step-number">3</span>
+                        <h4>Preenchimento e Entrega</h4>
+                        <p>Preencha o formulário online ou dirija-se à secretaria do colégio com a documentação em mãos para finalizar o processo.</p>
+                    </div>
+                </div>
+
+                <div id="documentacao" class="document-section">
+                    <h3>Documentos Requeridos</h3>
+                    <div class="document-list-grid">
+                        <div class="document-item">
+                            <i class="fas fa-id-card"></i>
+                            <h4>Bilhete de Identidade do Aluno</h4>
+                            <p>Cópia do Bilhete de Identidade ou Cédula Pessoal.</p>
+                        </div>
+                        <div class="document-item">
+                            <i class="fas fa-file-alt"></i>
+                            <h4>Boletim de Notas</h4>
+                            <p>Último boletim de notas do aluno.</p>
+                        </div>
+                        <div class="document-item">
+                            <i class="fas fa-certificate"></i>
+                            <h4>Certificado de Habilitações</h4>
+                            <p>Cópia do certificado de conclusão do ciclo anterior.</p>
+                        </div>
+                        <div class="document-item">
+                            <i class="fas fa-address-card"></i>
+                            <h4>Fotografias</h4>
+                            <p>Fotografias atuais do aluno.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="main-footer">
+        <div class="container">
+            <p>© 2025 Colégio Pitágoras. Todos os direitos reservados.</p>
+            <div class="social-links">
+                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="Script.js"></script>
+</body>
+</html>

@@ -1,0 +1,749 @@
+/* ============================================
+   Configurações Globais e Variáveis de Cores
+   ============================================ */
+
+:root {
+    --color-primary-light: #FFFACD; /* Amarelo fraco (LemonChiffon) */
+    --color-secondary-light: #F0FFF0; /* Branca/Verde bem claro (Honeydew) */
+    --color-accent-blue: #87CEEB;   /* Azul claro (SkyBlue) */
+    --color-text-dark: #2C3E50;     /* Azul escuro para texto principal */
+    --color-text-muted: #7F8C8D;    /* Cinza claro para texto secundário */
+    --color-background-light: #FDFDFD; /* Quase branco, suave */
+    --color-background-gray: #F5F5F5;  /* Cinza claro */
+    --color-button-primary: #4682B4; /* Azul Aço (SteelBlue) para botões principais */
+    --color-button-secondary: #ADD8E6; /* Azul Claro (LightBlue) para botões secundários */
+    --color-button-text: #FFFFFF;
+    --color-border: #E0E0E0;
+
+    --font-primary: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --font-secondary: 'Georgia', serif; /* Para títulos ou detalhes */
+
+    --transition-speed: 0.3s;
+}
+
+/* Modo Escuro */
+body.dark-mode {
+    --color-primary-light: #333; /* Fundo escuro */
+    --color-secondary-light: #2c3e50; /* Azul escuro para partes claras */
+    --color-accent-blue: #1E90FF; /* Azul mais vibrante no escuro */
+    --color-text-dark: #ECF0F1;     /* Texto claro no escuro */
+    --color-text-muted: #BDC3C7;    /* Cinza claro para texto secundário no escuro */
+    --color-background-light: #34495E; /* Fundo principal escuro */
+    --color-background-gray: #2C3E50;  /* Cinza escuro */
+    --color-button-primary: #1E90FF;
+    --color-button-secondary: #4682B4;
+    --color-button-text: #FFFFFF;
+    --color-border: #34495E;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-primary);
+    line-height: 1.6;
+    color: var(--color-text-dark);
+    background-color: var(--color-background-light);
+    transition: background-color var(--transition-speed) ease, color var(--transition-speed) ease;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+h2, h3 {
+    font-family: var(--font-secondary);
+    margin-bottom: 20px;
+    color: var(--color-accent-blue);
+    text-align: center;
+    font-size: 2.5em;
+    line-height: 1.2;
+}
+
+.section-description {
+    text-align: center;
+    color: var(--color-text-muted);
+    margin-bottom: 40px;
+    font-size: 1.1em;
+}
+
+/* ============================================
+   Cabeçalho
+   ============================================ */
+
+.main-header {
+    background-color: var(--color-background-light);
+    padding: 15px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: background-color var(--transition-speed) ease;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--color-text-dark);
+}
+
+.logo img {
+    height: 80px;
+    margin-right: 20px;
+    border-radius: 10px;
+}
+
+.logo h1 {
+    font-size: 1.8em;
+    font-family: var(--font-secondary);
+    color: var(--color-text-dark);
+    margin-bottom: 0;
+    line-height: 1.2;
+}
+
+/* Modo Escuro no Logo */
+body.dark-mode .logo h1 {
+    color: var(--color-text-dark); /* Mantem a cor escura no modo escuro para destaque */
+}
+
+.main-nav {
+    flex-grow: 1;
+    margin-left: 30px;
+}
+
+.nav-menu {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-menu li {
+    margin: 0 15px;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: var(--color-text-muted);
+    font-weight: bold;
+    transition: color var(--transition-speed) ease;
+    padding: 5px 0;
+    position: relative;
+}
+
+.nav-menu a:hover {
+    color: var(--color-accent-blue);
+}
+
+.nav-menu a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--color-accent-blue);
+    transition: width var(--transition-speed) ease;
+}
+
+.nav-menu a:hover::after {
+    width: 100%;
+}
+
+/* Botão de alternância de tema */
+.theme-switch-wrapper {
+    display: flex;
+    align-items: center;
+}
+
+.theme-switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 24px;
+}
+
+.theme-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--color-background-gray);
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 3px;
+    background-color: var(--color-text-dark);
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: var(--color-accent-blue);
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+    background-color: var(--color-button-text); /* Branco para o sol */
+}
+
+.theme-text {
+    margin-left: 10px;
+    font-size: 0.9em;
+    color: var(--color-text-muted);
+    display: flex;
+    align-items: center;
+}
+.theme-text i {
+    margin: 0 5px;
+}
+
+/* Botão do Menu Mobile */
+.nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.8em;
+    cursor: pointer;
+    color: var(--color-text-dark);
+}
+
+/* ============================================
+   Seções Principais
+   ============================================ */
+
+main section {
+    padding: 60px 0;
+}
+
+.hero-section {
+    background: linear-gradient(rgba(135, 206, 235, 0.6), rgba(255, 255, 240, 0.6)), url('https://i.ibb.co/whq4MRgV/Facebook-4251806751788979-image1.webp') center center/cover no-repeat;
+    color: var(--color-text-dark);
+    text-align: center;
+    padding: 100px 0;
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-content {
+    max-width: 700px;
+}
+
+.hero-content h2 {
+    font-size: 3.5em;
+    margin-bottom: 20px;
+    color: var(--color-text-dark);
+}
+
+.hero-content p {
+    font-size: 1.3em;
+    margin-bottom: 30px;
+    color: var(--color-text-dark);
+}
+
+.hero-section .btn.primary-btn {
+    background-color: var(--color-button-primary);
+    color: var(--color-button-text);
+    padding: 15px 30px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1em;
+    transition: background-color var(--transition-speed) ease, transform var(--transition-speed) ease;
+}
+
+.hero-section .btn.primary-btn:hover {
+    background-color: var(--color-accent-blue);
+    transform: translateY(-3px);
+}
+
+.hero-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+/* Seções de Informação */
+.info-section {
+    padding: 60px 0;
+}
+
+.light-gray-bg {
+    background-color: var(--color-background-gray);
+}
+
+/* ============================================
+   Cards de Cursos
+   ============================================ */
+.course-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    text-align: center;
+}
+
+.course-card {
+    background-color: var(--color-background-light);
+    padding: 30px 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    transition: transform var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.course-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.course-card i {
+    color: var(--color-accent-blue);
+    margin-bottom: 20px;
+}
+
+.course-card h4 {
+    font-family: var(--font-secondary);
+    font-size: 1.5em;
+    margin-bottom: 15px;
+    color: var(--color-text-dark);
+}
+
+.course-card p {
+    color: var(--color-text-muted);
+    margin-bottom: 25px;
+    flex-grow: 1; /* Permite que o parágrafo ocupe o espaço disponível */
+}
+
+/* ============================================
+   Passo a Passo de Matrícula
+   ============================================ */
+.step-by-step {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    text-align: center;
+}
+
+.step-card {
+    background-color: var(--color-background-light);
+    padding: 30px 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.step-number {
+    background-color: var(--color-accent-blue);
+    color: var(--color-button-text);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8em;
+    font-weight: bold;
+    margin-bottom: 20px;
+    box-shadow: 0 0 15px rgba(70, 130, 180, 0.4); /* Sombra azulada */
+}
+
+.step-card h4 {
+    font-family: var(--font-secondary);
+    font-size: 1.4em;
+    margin-bottom: 10px;
+    color: var(--color-text-dark);
+}
+
+.step-card p {
+    color: var(--color-text-muted);
+}
+
+/* ============================================
+   Tabela de Preços
+   ============================================ */
+.price-table {
+    overflow-x: auto; /* Para garantir que a tabela seja responsiva em telas pequenas */
+}
+
+.price-table table {
+    width: 100%;
+    border-collapse: separate; /* Para permitir border-spacing */
+    border-spacing: 0 15px; /* Espaçamento entre linhas */
+    background-color: var(--color-background-light);
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.price-table th,
+.price-table td {
+    padding: 15px 20px;
+    text-align: left;
+}
+
+.price-table thead th {
+    background-color: var(--color-accent-blue);
+    color: var(--color-button-text);
+    font-family: var(--font-secondary);
+    font-size: 1.2em;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.price-table tbody tr {
+    background-color: var(--color-background-light); /* Fundo das linhas de dados */
+    transition: background-color var(--transition-speed) ease;
+}
+
+.price-table tbody tr:hover {
+    background-color: var(--color-background-gray); /* Fundo mais escuro no hover */
+}
+
+.price-table tbody td {
+    color: var(--color-text-muted);
+    font-size: 1.05em;
+}
+
+.price-table tbody td:first-child {
+    font-weight: bold;
+    color: var(--color-text-dark);
+}
+
+/* ============================================
+   Área Hypermanage e Localização
+   ============================================ */
+.hypermanage-area, .location-content, .contact-info {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.hypermanage-area p, .location-content p, .contact-info p {
+    color: var(--color-text-muted);
+    margin-bottom: 25px;
+    font-size: 1.1em;
+}
+
+.contact-info p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+.contact-info p i {
+    color: var(--color-accent-blue);
+}
+
+/* ============================================
+   Rodapé
+   ============================================ */
+.main-footer {
+    background-color: var(--color-text-dark);
+    color: var(--color-background-gray);
+    padding: 40px 0;
+    text-align: center;
+    margin-top: 60px;
+}
+
+.main-footer p {
+    margin-bottom: 15px;
+}
+
+.social-links a {
+    color: var(--color-background-gray);
+    font-size: 1.5em;
+    margin: 0 10px;
+    transition: color var(--transition-speed) ease;
+}
+
+.social-links a:hover {
+    color: var(--color-accent-blue);
+}
+
+/* ============================================
+   Botões Genéricos
+   ============================================ */
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1em;
+    transition: background-color var(--transition-speed) ease, color var(--transition-speed) ease, transform var(--transition-speed) ease;
+    cursor: pointer;
+    border: none;
+}
+
+.btn.primary-btn {
+    background-color: var(--color-button-primary);
+    color: var(--color-button-text);
+}
+
+.btn.primary-btn:hover {
+    background-color: var(--color-accent-blue);
+    transform: translateY(-3px);
+}
+
+.btn.secondary-btn {
+    background-color: var(--color-button-secondary);
+    color: var(--color-text-dark);
+    border: 2px solid var(--color-button-secondary);
+}
+
+.btn.secondary-btn:hover {
+    background-color: var(--color-accent-blue);
+    color: var(--color-button-text);
+    border-color: var(--color-accent-blue);
+    transform: translateY(-3px);
+}
+
+/* Botão de Mapa */
+.map-btn {
+    background-color: var(--color-primary-light);
+    color: var(--color-text-dark);
+    border: 2px solid var(--color-primary-light);
+}
+
+.map-btn:hover {
+    background-color: var(--color-accent-blue);
+    color: var(--color-button-text);
+    border-color: var(--color-accent-blue);
+}
+
+/* ============================================
+   Responsividade
+   ============================================ */
+
+@media (max-width: 992px) {
+    .logo h1 {
+        font-size: 1.5em;
+    }
+
+    .hero-content h2 {
+        font-size: 2.8em;
+    }
+
+    .hero-content p {
+        font-size: 1.1em;
+    }
+
+    h2, h3 {
+        font-size: 2em;
+    }
+}
+
+@media (max-width: 768px) {
+    .header-content {
+        flex-wrap: wrap;
+    }
+
+    .logo {
+        flex-basis: 100%;
+        justify-content: center;
+        margin-bottom: 10px;
+    }
+
+    .logo img {
+        margin-right: 10px;
+    }
+
+    .main-nav {
+        flex-basis: 100%;
+        margin-left: 0;
+        order: 3; /* Coloca a navegação por baixo */
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .nav-toggle {
+        display: block; /* Mostra o botão do menu mobile */
+        order: 2; /* Coloca o botão entre o logo e o menu */
+        margin-right: 15px;
+        align-self: center; /* Centraliza verticalmente */
+    }
+
+    .nav-menu {
+        display: none; /* Oculta o menu por padrão no mobile */
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        background-color: var(--color-background-light);
+        position: absolute;
+        top: 80px; /* Ajustar conforme a altura do header */
+        left: 0;
+        padding-bottom: 20px;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    }
+
+    .nav-menu.active {
+        display: flex; /* Mostra o menu quando ativo */
+    }
+
+    .nav-menu li {
+        margin: 10px 0;
+    }
+
+    .nav-menu a {
+        padding: 10px 0;
+    }
+
+    .theme-switch-wrapper {
+        order: 2; /* Posição do switch no layout mobile */
+        margin-left: 15px;
+    }
+
+    .hero-section {
+        padding: 60px 0;
+        min-height: auto;
+        background-position: center;
+    }
+    .hero-content {
+        padding: 0 20px;
+    }
+
+    .hero-content h2 {
+        font-size: 2.2em;
+    }
+
+    .hero-content p {
+        font-size: 1em;
+    }
+
+    .btn {
+        padding: 12px 20px;
+        font-size: 0.9em;
+    }
+
+    .course-grid, .step-by-step {
+        grid-template-columns: 1fr; /* Uma coluna em telas pequenas */
+    }
+}
+
+/* Estilos específicos para o modo escuro */
+body.dark-mode {
+    background-color: var(--color-background-light);
+    color: var(--color-text-dark);
+}
+
+body.dark-mode .main-header {
+    background-color: var(--color-background-light);
+}
+
+body.dark-mode .logo h1 {
+    color: var(--color-text-dark);
+}
+
+body.dark-mode .nav-menu a {
+    color: var(--color-text-muted);
+}
+
+body.dark-mode .nav-menu a:hover {
+    color: var(--color-accent-blue);
+}
+
+body.dark-mode .hero-section {
+    color: var(--color-text-dark);
+}
+
+body.dark-mode .course-card,
+body.dark-mode .step-card {
+    background-color: var(--color-background-gray);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+body.dark-mode .price-table table {
+    background-color: var(--color-background-gray);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+body.dark-mode .price-table thead th {
+    background-color: var(--color-accent-blue);
+    color: var(--color-button-text);
+}
+
+body.dark-mode .price-table tbody tr:hover {
+    background-color: var(--color-text-dark); /* Fundo mais escuro no hover */
+}
+
+body.dark-mode .btn.secondary-btn {
+    background-color: var(--color-button-secondary);
+    color: var(--color-text-dark);
+    border-color: var(--color-button-secondary);
+}
+
+body.dark-mode .btn.secondary-btn:hover {
+    background-color: var(--color-accent-blue);
+    color: var(--color-button-text);
+    border-color: var(--color-accent-blue);
+}
+
+body.dark-mode .map-btn {
+    background-color: var(--color-primary-light);
+    color: var(--color-text-dark);
+    border-color: var(--color-primary-light);
+}
+
+body.dark-mode .map-btn:hover {
+    background-color: var(--color-accent-blue);
+    color: var(--color-button-text);
+    border-color: var(--color-accent-blue);
+}
+
+
+body.dark-mode .main-footer {
+    background-color: var(--color-text-dark);
+    color: var(--color-background-gray);
+}
+
+body.dark-mode .social-links a {
+    color: var(--color-background-gray);
+}
+
+body.dark-mode .social-links a:hover {
+    color: var(--color-accent-blue);
+}
+
+/* Estilos para o menu mobile ativado */
+body.dark-mode .nav-menu {
+    background-color: var(--color-background-light); /* Fundo escuro para o menu no modo escuro */
+}
