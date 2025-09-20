@@ -1,6 +1,6 @@
 /* ============================================
-   Configurações Globais e Variáveis de Cores
-   ============================================ */
+    Configurações Globais e Variáveis de Cores
+    ============================================ */
 
 :root {
     --color-primary-light: #FFFACD; /* Amarelo fraco (LemonChiffon) */
@@ -9,7 +9,7 @@
     --color-text-dark: #2C3E50;     /* Azul escuro para texto principal */
     --color-text-muted: #7F8C8D;    /* Cinza claro para texto secundário */
     --color-background-light: #FDFDFD; /* Quase branco, suave */
-    --color-background-gray: #F5F5F5;  /* Cinza claro */
+    --color-background-gray: #F5F5F5;   /* Cinza claro */
     --color-button-primary: #4682B4; /* Azul Aço (SteelBlue) para botões principais */
     --color-button-secondary: #ADD8E6; /* Azul Claro (LightBlue) para botões secundários */
     --color-button-text: #FFFFFF;
@@ -23,19 +23,22 @@
 
 /* Modo Escuro */
 body.dark-mode {
-    --color-primary-light: #333; /* Fundo escuro */
-    --color-secondary-light: #2c3e50; /* Azul escuro para partes claras */
-    --color-accent-blue: #1E90FF; /* Azul mais vibrante no escuro */
-    --color-text-dark: #ECF0F1;     /* Texto claro no escuro */
-    --color-text-muted: #BDC3C7;    /* Cinza claro para texto secundário no escuro */
-    --color-background-light: #34495E; /* Fundo principal escuro */
-    --color-background-gray: #2C3E50;  /* Cinza escuro */
+    --color-primary-light: #34495E;
+    --color-secondary-light: #2c3e50;
+    --color-accent-blue: #1E90FF;
+    --color-text-dark: #ECF0F1;
+    --color-text-muted: #BDC3C7;
+    --color-background-light: #2C3E50;
+    --color-background-gray: #34495E;
     --color-button-primary: #1E90FF;
     --color-button-secondary: #4682B4;
     --color-button-text: #FFFFFF;
     --color-border: #34495E;
 }
 
+/* ============================================
+    Estilos Globais
+    ============================================ */
 * {
     margin: 0;
     padding: 0;
@@ -56,6 +59,12 @@ body {
     padding: 0 20px;
 }
 
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--color-text-dark);
+}
+
 h2, h3 {
     font-family: var(--font-secondary);
     margin-bottom: 20px;
@@ -63,6 +72,19 @@ h2, h3 {
     text-align: center;
     font-size: 2.5em;
     line-height: 1.2;
+}
+
+p {
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.secao {
+    padding: 2rem;
+    background-color: var(--color-background-light);
+    margin-bottom: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .section-description {
@@ -73,8 +95,8 @@ h2, h3 {
 }
 
 /* ============================================
-   Cabeçalho
-   ============================================ */
+    Cabeçalho
+    ============================================ */
 
 .main-header {
     background-color: var(--color-background-light);
@@ -105,8 +127,8 @@ h2, h3 {
 }
 
 .logo img {
-    height: 80px;
-    margin-right: 20px;
+    height: 50px;
+    margin-right: 10px;
     border-radius: 10px;
 }
 
@@ -116,11 +138,6 @@ h2, h3 {
     color: var(--color-text-dark);
     margin-bottom: 0;
     line-height: 1.2;
-}
-
-/* Modo Escuro no Logo */
-body.dark-mode .logo h1 {
-    color: var(--color-text-dark); /* Mantem a cor escura no modo escuro para destaque */
 }
 
 .main-nav {
@@ -217,7 +234,7 @@ input:checked + .slider {
 
 input:checked + .slider:before {
     transform: translateX(26px);
-    background-color: var(--color-button-text); /* Branco para o sol */
+    background-color: var(--color-button-text);
 }
 
 .theme-text {
@@ -233,17 +250,27 @@ input:checked + .slider:before {
 
 /* Botão do Menu Mobile */
 .nav-toggle {
-    display: none;
+    display: none; /* Esconde por padrão em desktop */
     background: none;
     border: none;
     font-size: 1.8em;
     cursor: pointer;
     color: var(--color-text-dark);
+    transition: color var(--transition-speed) ease;
+}
+
+.nav-toggle.active {
+    color: var(--color-accent-blue); /* Cor no estado ativo */
+}
+
+/* Animação e Ícone de Fechar */
+.nav-toggle.active .fa-bars:before {
+    content: "\f00d"; /* Código do ícone de 'X' do Font Awesome */
 }
 
 /* ============================================
-   Seções Principais
-   ============================================ */
+    Seções Principais
+    ============================================ */
 
 main section {
     padding: 60px 0;
@@ -309,8 +336,8 @@ main section {
 }
 
 /* ============================================
-   Cards de Cursos
-   ============================================ */
+    Cards de Cursos
+    ============================================ */
 .course-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -349,12 +376,12 @@ main section {
 .course-card p {
     color: var(--color-text-muted);
     margin-bottom: 25px;
-    flex-grow: 1; /* Permite que o parágrafo ocupe o espaço disponível */
+    flex-grow: 1;
 }
 
 /* ============================================
-   Passo a Passo de Matrícula
-   ============================================ */
+    Passo a Passo de Matrícula
+    ============================================ */
 .step-by-step {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -384,7 +411,7 @@ main section {
     font-size: 1.8em;
     font-weight: bold;
     margin-bottom: 20px;
-    box-shadow: 0 0 15px rgba(70, 130, 180, 0.4); /* Sombra azulada */
+    box-shadow: 0 0 15px rgba(70, 130, 180, 0.4);
 }
 
 .step-card h4 {
@@ -399,16 +426,16 @@ main section {
 }
 
 /* ============================================
-   Tabela de Preços
-   ============================================ */
+    Tabela de Preços
+    ============================================ */
 .price-table {
-    overflow-x: auto; /* Para garantir que a tabela seja responsiva em telas pequenas */
+    overflow-x: auto;
 }
 
 .price-table table {
     width: 100%;
-    border-collapse: separate; /* Para permitir border-spacing */
-    border-spacing: 0 15px; /* Espaçamento entre linhas */
+    border-collapse: separate;
+    border-spacing: 0 15px;
     background-color: var(--color-background-light);
     border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
@@ -430,12 +457,12 @@ main section {
 }
 
 .price-table tbody tr {
-    background-color: var(--color-background-light); /* Fundo das linhas de dados */
+    background-color: var(--color-background-light);
     transition: background-color var(--transition-speed) ease;
 }
 
 .price-table tbody tr:hover {
-    background-color: var(--color-background-gray); /* Fundo mais escuro no hover */
+    background-color: var(--color-background-gray);
 }
 
 .price-table tbody td {
@@ -449,8 +476,8 @@ main section {
 }
 
 /* ============================================
-   Área Hypermanage e Localização
-   ============================================ */
+    Área Hypermanage e Localização
+    ============================================ */
 .hypermanage-area, .location-content, .contact-info {
     text-align: center;
     margin-top: 30px;
@@ -473,8 +500,8 @@ main section {
 }
 
 /* ============================================
-   Rodapé
-   ============================================ */
+    Rodapé
+    ============================================ */
 .main-footer {
     background-color: var(--color-text-dark);
     color: var(--color-background-gray);
@@ -499,8 +526,8 @@ main section {
 }
 
 /* ============================================
-   Botões Genéricos
-   ============================================ */
+    Botões Genéricos
+    ============================================ */
 .btn {
     display: inline-block;
     padding: 12px 25px;
@@ -550,18 +577,27 @@ main section {
 }
 
 /* ============================================
-   Responsividade
-   ============================================ */
+    Responsividade
+    ============================================ */
+/* Estilos para telas grandes (desktop) */
+.nav-menu {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
 
+/* Mobile-first */
 @media (max-width: 992px) {
     .logo h1 {
         font-size: 1.5em;
     }
-
+    
     .hero-content h2 {
         font-size: 2.8em;
     }
-
+    
     .hero-content p {
         font-size: 1.1em;
     }
@@ -575,102 +611,97 @@ main section {
     .header-content {
         flex-wrap: wrap;
     }
-
-    .logo {
-        flex-basis: 100%;
-        justify-content: center;
+    
+    .logo, .theme-switch-wrapper {
         margin-bottom: 10px;
+        order: 1;
+        width: 50%;
+        text-align: left;
+    }
+    .logo {
+        justify-content: flex-start;
     }
 
-    .logo img {
-        margin-right: 10px;
+    .theme-switch-wrapper {
+        justify-content: flex-end;
     }
-
+    
     .main-nav {
-        flex-basis: 100%;
-        margin-left: 0;
-        order: 3; /* Coloca a navegação por baixo */
+        order: 3;
         width: 100%;
-        display: flex;
-        justify-content: center;
     }
-
+    
     .nav-toggle {
-        display: block; /* Mostra o botão do menu mobile */
-        order: 2; /* Coloca o botão entre o logo e o menu */
-        margin-right: 15px;
-        align-self: center; /* Centraliza verticalmente */
+        display: block; /* Mostra o botão do menu */
+        order: 2;
+        margin-left: auto; /* Empurra o botão para a direita */
     }
-
+    
     .nav-menu {
-        display: none; /* Oculta o menu por padrão no mobile */
+        display: none; /* Esconde o menu por padrão */
         flex-direction: column;
-        width: 100%;
-        text-align: center;
         background-color: var(--color-background-light);
+        width: 100%;
         position: absolute;
-        top: 80px; /* Ajustar conforme a altura do header */
+        top: 80px;
         left: 0;
         padding-bottom: 20px;
         box-shadow: 0 5px 10px rgba(0,0,0,0.1);
     }
-
+    
     .nav-menu.active {
         display: flex; /* Mostra o menu quando ativo */
     }
-
+    
     .nav-menu li {
         margin: 10px 0;
     }
-
+    
     .nav-menu a {
         padding: 10px 0;
     }
-
-    .theme-switch-wrapper {
-        order: 2; /* Posição do switch no layout mobile */
-        margin-left: 15px;
-    }
-
+    
     .hero-section {
         padding: 60px 0;
         min-height: auto;
         background-position: center;
     }
+    
     .hero-content {
         padding: 0 20px;
     }
-
+    
     .hero-content h2 {
         font-size: 2.2em;
     }
-
+    
     .hero-content p {
         font-size: 1em;
     }
-
+    
     .btn {
         padding: 12px 20px;
         font-size: 0.9em;
     }
-
+    
     .course-grid, .step-by-step {
-        grid-template-columns: 1fr; /* Uma coluna em telas pequenas */
+        grid-template-columns: 1fr;
     }
 }
 
-/* Estilos específicos para o modo escuro */
-body.dark-mode {
-    background-color: var(--color-background-light);
-    color: var(--color-text-dark);
-}
-
+/* ============================================
+    Modo Escuro (Ajustes de Cores)
+    ============================================ */
 body.dark-mode .main-header {
     background-color: var(--color-background-light);
 }
 
 body.dark-mode .logo h1 {
     color: var(--color-text-dark);
+}
+
+body.dark-mode .nav-menu {
+    background-color: var(--color-background-light);
 }
 
 body.dark-mode .nav-menu a {
@@ -681,16 +712,17 @@ body.dark-mode .nav-menu a:hover {
     color: var(--color-accent-blue);
 }
 
+body.dark-mode .nav-toggle {
+    color: var(--color-text-dark);
+}
+
 body.dark-mode .hero-section {
+    background: linear-gradient(rgba(44, 62, 80, 0.6), rgba(44, 62, 80, 0.6)), url('https://i.ibb.co/whq4MRgV/Facebook-4251806751788979-image1.webp') center center/cover no-repeat;
     color: var(--color-text-dark);
 }
 
 body.dark-mode .course-card,
-body.dark-mode .step-card {
-    background-color: var(--color-background-gray);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-}
-
+body.dark-mode .step-card,
 body.dark-mode .price-table table {
     background-color: var(--color-background-gray);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
@@ -698,11 +730,10 @@ body.dark-mode .price-table table {
 
 body.dark-mode .price-table thead th {
     background-color: var(--color-accent-blue);
-    color: var(--color-button-text);
 }
 
 body.dark-mode .price-table tbody tr:hover {
-    background-color: var(--color-text-dark); /* Fundo mais escuro no hover */
+    background-color: #3f5872; /* Um tom um pouco mais claro para hover no escuro */
 }
 
 body.dark-mode .btn.secondary-btn {
@@ -717,33 +748,7 @@ body.dark-mode .btn.secondary-btn:hover {
     border-color: var(--color-accent-blue);
 }
 
-body.dark-mode .map-btn {
-    background-color: var(--color-primary-light);
-    color: var(--color-text-dark);
-    border-color: var(--color-primary-light);
-}
-
-body.dark-mode .map-btn:hover {
-    background-color: var(--color-accent-blue);
-    color: var(--color-button-text);
-    border-color: var(--color-accent-blue);
-}
-
-
 body.dark-mode .main-footer {
     background-color: var(--color-text-dark);
     color: var(--color-background-gray);
-}
-
-body.dark-mode .social-links a {
-    color: var(--color-background-gray);
-}
-
-body.dark-mode .social-links a:hover {
-    color: var(--color-accent-blue);
-}
-
-/* Estilos para o menu mobile ativado */
-body.dark-mode .nav-menu {
-    background-color: var(--color-background-light); /* Fundo escuro para o menu no modo escuro */
 }
