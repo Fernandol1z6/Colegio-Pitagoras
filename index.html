@@ -24,22 +24,23 @@
                     <i class="fas fa-bars"></i>
                 </button>
                 <ul class="nav-menu">
+                    <!-- Botão de fechar (aparece em mobile quando o menu estiver aberto) -->
+                    <li class="nav-close-item"><button class="nav-close" aria-label="Fechar Menu">&times;</button></li>
                     <li><a href="#home">Início</a></li>
                     <li><a href="#cursos">Cursos</a></li>
                     <li><a href="#matriculas">Matrículas</a></li>
                     <li><a href="#precos">Preços</a></li>
-                    <li><a href="#hypermanage">Hypermanage</a></li>
+                    <li><a href="#gestescola">gestescola</a></li>
                     <li><a href="#localizacao">Localização</a></li>
                     <li><a href="#contactos">Contactos</a></li>
                 </ul>
             </nav>
             
             <div class="theme-switch-wrapper">
-                <label class="theme-switch" for="checkbox">
-                    <input type="checkbox" id="checkbox" aria-label="Alternar Tema Claro/Escuro" />
-                    <div class="slider round"></div>
-                </label>
-                <span class="theme-text"><i class="fas fa-moon"></i> / <i class="fas fa-sun"></i></span>
+                <!-- Botão único de alternância de tema: o ícone muda para sol ou lua conforme o tema -->
+                <button id="theme-toggle" class="theme-toggle" aria-label="Alternar Tema" title="Alternar Tema">
+                    <i class="fas fa-moon" aria-hidden="true"></i>
+                </button>
             </div>
         </div>
     </header>
@@ -143,13 +144,15 @@
             </div>
         </section>
 
-        <section id="hypermanage" class="info-section">
+    <section id="gestescola" class="info-section">
             <div class="container">
-                <h3>Área do Aluno e Pais (Hypermanage)</h3>
+                <h3>Área do Aluno e Pais GesteScola</h3>
                 <p class="section-description">Acesse as notas, frequência e comunicados importantes. (Dados são atualizados periodicamente).</p>
-                <div class="hypermanage-area">
-                    <p>Para aceder às informações do Hypermanage, por favor, clique no botão abaixo. Você será redirecionado para a página onde os dados (notas, etc.) são apresentados.</p>
-                    <a href="https://www.hipermanager.com/?lg=pt&u1=m" class="btn primary-btn">Acessar Hypermanage</a>
+                <div class="gestescola-area">
+                    <p>Para aceder às informações do GesteScola, por favor, clique no botão abaixo. Você será redirecionado
+                         para a página onde os dados (notas, etc.) são apresentados.</p>
+                    <!-- Botão para acessar o portal GesteScola (ou plataforma de gestão) -->
+                    <a href="https://www.hipermanager.com/?lg=pt&u1=m" target="_blank" rel="noopener noreferrer" class="btn primary-btn">Acessar GesteScola</a>
                 </div>
             </div>
         </section>
@@ -159,10 +162,11 @@
                 <h3>Localização</h3>
                 <p class="section-description">Visite-nos ou veja a nossa localização no mapa.</p>
                 <div class="location-content">
-                    <p>Estamos localizados em: [Endereço Completo do Colégio]</p>
-                    <a href="https://www.google.com/maps/place/Col%C3%A9gio+Pit%C3%A1goras+Lage/@-14.9235246,13.4812855,17z/data=!3m1!4b1!4m6!3m5!1s0x1ba34b71be1201ef:0x61ce39a31284c4fc!8m2!3d-14.9235246!4d13.4858989!16s%2Fg%2F11pkbhyjns?entry=ttu&g_ep=EgoyMDI1MDkwOS4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="btn secondary-btn map-btn">
-                        <i class="fas fa-map-marker-alt"></i> Ver no Google Maps
-                    </a>
+                    <p>Estamos localizados em:</p>
+                    <p>Lubango: Casa Pato, Lage, João de Almeida e Arinba</p>
+                    <p>Quipungo; Caluquembe; Chibia</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Veja nossas unidades no Google Maps.</p>
+                    <a class="btn primary-btn map-btn" target="_blank" rel="noopener noreferrer"><i class="fas fa-map-marked-alt"></i> Ver no Google Maps</a>
                 </div>
             </div>
         </section>

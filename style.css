@@ -188,7 +188,7 @@ p {
 /* Botão de alternância de tema */
 .theme-switch-wrapper {
     display: flex;
-    align-items: center;
+    align-items: right;
 }
 
 .theme-switch {
@@ -246,6 +246,66 @@ input:checked + .slider:before {
 }
 .theme-text i {
     margin: 0 5px;
+}
+
+/* Novo botão de alternância tema */
+.theme-toggle {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: none;
+    background: linear-gradient(135deg, var(--color-button-secondary), var(--color-button-primary));
+    color: var(--color-button-text);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+    transition: transform .15s ease, background .2s ease;
+}
+
+.theme-toggle:active { transform: scale(.98); }
+
+/* Ícones dentro do botão */
+.theme-toggle i { font-size: 1.1rem; }
+
+/* Estilos para o botão fechar no menu (mobile) */
+.nav-close {
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: var(--color-text-muted);
+    cursor: pointer;
+}
+.nav-close-item { display: none; }
+
+/* Mobile: exibe o botão de menu e ajusta lista */
+@media (max-width: 900px) {
+    .nav-toggle { display: inline-block; }
+    .nav-menu {
+        position: fixed;
+        top: 0;
+        right: 0;
+        height: 100vh;
+        width: 280px;
+        background: var(--color-background-light);
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 40px 20px;
+        transform: translateX(110%);
+        transition: transform var(--transition-speed) ease;
+        box-shadow: -6px 0 18px rgba(0,0,0,0.12);
+        z-index: 1100;
+    }
+
+    .nav-menu.active { transform: translateX(0); }
+
+    .nav-menu li { margin: 12px 0; }
+    .nav-menu a { font-size: 1.05rem; }
+
+    .nav-close-item { display: block; width: 100%; text-align: right; }
+    .nav-close { margin-bottom: 10px; }
 }
 
 /* Botão do Menu Mobile */
@@ -399,6 +459,9 @@ main section {
     align-items: center;
 }
 
+/* Estilos para o mapa de localizações */
+/* mapa removido — se precisar reintroduzir, adicione regras aqui */
+
 .step-number {
     background-color: var(--color-accent-blue);
     color: var(--color-button-text);
@@ -475,15 +538,12 @@ main section {
     color: var(--color-text-dark);
 }
 
-/* ============================================
-    Área Hypermanage e Localização
-    ============================================ */
-.hypermanage-area, .location-content, .contact-info {
+.gestescola-area, .location-content, .contact-info {
     text-align: center;
     margin-top: 30px;
 }
 
-.hypermanage-area p, .location-content p, .contact-info p {
+.gestescola-area p, .location-content p, .contact-info p {
     color: var(--color-text-muted);
     margin-bottom: 25px;
     font-size: 1.1em;
