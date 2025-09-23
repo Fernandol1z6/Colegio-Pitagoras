@@ -103,4 +103,3 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 // (Removida integração direta com Google Maps — usamos um link que pesquisa por 'colegio pitagoras')
-
