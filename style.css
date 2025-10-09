@@ -3,25 +3,35 @@
     ============================================ */
 
 :root {
-    --color-primary-light: #FFFACD; /* Amarelo fraco (LemonChiffon) */
-    --color-secondary-light: #F0FFF0; /* Branca/Verde bem claro (Honeydew) */
-    --color-accent-blue: #87CEEB;   /* Azul claro (SkyBlue) */
-    --color-text-dark: #2C3E50;     /* Azul escuro para texto principal */
-    --color-text-muted: #7F8C8D;    /* Cinza claro para texto secundário */
-    --color-background-light: #FDFDFD; /* Quase branco, suave */
-    --color-background-gray: #F5F5F5;   /* Cinza claro */
-    --color-button-primary: #4682B4; /* Azul Aço (SteelBlue) para botões principais */
-    --color-button-secondary: #ADD8E6; /* Azul Claro (LightBlue) para botões secundários */
+    --color-primary-light: #FFFACD;
+    /* Amarelo fraco (LemonChiffon) */
+    --color-secondary-light: #F0FFF0;
+    /* Branca/Verde bem claro (Honeydew) */
+    --color-accent-blue: #87CEEB;
+    /* Azul claro (SkyBlue) */
+    --color-text-dark: #2C3E50;
+    /* Azul escuro para texto principal */
+    --color-text-muted: #7F8C8D;
+    /* Cinza claro para texto secundário */
+    --color-background-light: #FDFDFD;
+    /* Quase branco, suave */
+    --color-background-gray: #F5F5F5;
+    /* Cinza claro */
+    --color-button-primary: #4682B4;
+    /* Azul Aço (SteelBlue) para botões principais */
+    --color-button-secondary: #ADD8E6;
+    /* Azul Claro (LightBlue) para botões secundários */
     --color-button-text: #FFFFFF;
     --color-border: #E0E0E0;
-
     --font-primary: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    --font-secondary: 'Georgia', serif; /* Para títulos ou detalhes */
-
+    --font-secondary: 'Georgia', serif;
+    /* Para títulos ou detalhes */
     --transition-speed: 0.3s;
 }
 
+
 /* Modo Escuro */
+
 body.dark-mode {
     --color-primary-light: #34495E;
     --color-secondary-light: #2c3e50;
@@ -36,9 +46,11 @@ body.dark-mode {
     --color-border: #34495E;
 }
 
+
 /* ============================================
     Estilos Globais
     ============================================ */
+
 * {
     margin: 0;
     padding: 0;
@@ -65,7 +77,8 @@ h1 {
     color: var(--color-text-dark);
 }
 
-h2, h3 {
+h2,
+h3 {
     font-family: var(--font-secondary);
     margin-bottom: 20px;
     color: var(--color-accent-blue);
@@ -93,6 +106,7 @@ p {
     margin-bottom: 40px;
     font-size: 1.1em;
 }
+
 
 /* ============================================
     Cabeçalho
@@ -185,7 +199,9 @@ p {
     width: 100%;
 }
 
+
 /* Botão de alternância de tema */
+
 .theme-switch-wrapper {
     display: flex;
     align-items: right;
@@ -228,11 +244,11 @@ p {
     border-radius: 50%;
 }
 
-input:checked + .slider {
+input:checked+.slider {
     background-color: var(--color-accent-blue);
 }
 
-input:checked + .slider:before {
+input:checked+.slider:before {
     transform: translateX(26px);
     background-color: var(--color-button-text);
 }
@@ -244,11 +260,14 @@ input:checked + .slider:before {
     display: flex;
     align-items: center;
 }
+
 .theme-text i {
     margin: 0 5px;
 }
 
+
 /* Novo botão de alternância tema */
+
 .theme-toggle {
     width: 44px;
     height: 44px;
@@ -261,16 +280,24 @@ input:checked + .slider:before {
     justify-content: center;
     font-size: 1.1rem;
     cursor: pointer;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
     transition: transform .15s ease, background .2s ease;
 }
 
-.theme-toggle:active { transform: scale(.98); }
+.theme-toggle:active {
+    transform: scale(.98);
+}
+
 
 /* Ícones dentro do botão */
-.theme-toggle i { font-size: 1.1rem; }
+
+.theme-toggle i {
+    font-size: 1.1rem;
+}
+
 
 /* Estilos para o botão fechar no menu (mobile) */
+
 .nav-close {
     background: none;
     border: none;
@@ -278,11 +305,18 @@ input:checked + .slider:before {
     color: var(--color-text-muted);
     cursor: pointer;
 }
-.nav-close-item { display: none; }
+
+.nav-close-item {
+    display: none;
+}
+
 
 /* Mobile: exibe o botão de menu e ajusta lista */
+
 @media (max-width: 900px) {
-    .nav-toggle { display: inline-block; }
+    .nav-toggle {
+        display: inline-block;
+    }
     .nav-menu {
         position: fixed;
         top: 0;
@@ -295,22 +329,34 @@ input:checked + .slider:before {
         padding: 40px 20px;
         transform: translateX(110%);
         transition: transform var(--transition-speed) ease;
-        box-shadow: -6px 0 18px rgba(0,0,0,0.12);
+        box-shadow: -6px 0 18px rgba(0, 0, 0, 0.12);
         z-index: 1100;
     }
-
-    .nav-menu.active { transform: translateX(0); }
-
-    .nav-menu li { margin: 12px 0; }
-    .nav-menu a { font-size: 1.05rem; }
-
-    .nav-close-item { display: block; width: 100%; text-align: right; }
-    .nav-close { margin-bottom: 10px; }
+    .nav-menu.active {
+        transform: translateX(0);
+    }
+    .nav-menu li {
+        margin: 12px 0;
+    }
+    .nav-menu a {
+        font-size: 1.05rem;
+    }
+    .nav-close-item {
+        display: block;
+        width: 100%;
+        text-align: right;
+    }
+    .nav-close {
+        margin-bottom: 10px;
+    }
 }
 
+
 /* Botão do Menu Mobile */
+
 .nav-toggle {
-    display: none; /* Esconde por padrão em desktop */
+    display: none;
+    /* Esconde por padrão em desktop */
     background: none;
     border: none;
     font-size: 1.8em;
@@ -320,13 +366,18 @@ input:checked + .slider:before {
 }
 
 .nav-toggle.active {
-    color: var(--color-accent-blue); /* Cor no estado ativo */
+    color: var(--color-accent-blue);
+    /* Cor no estado ativo */
 }
 
+
 /* Animação e Ícone de Fechar */
+
 .nav-toggle.active .fa-bars:before {
-    content: "\f00d"; /* Código do ícone de 'X' do Font Awesome */
+    content: "\f00d";
+    /* Código do ícone de 'X' do Font Awesome */
 }
+
 
 /* ============================================
     Seções Principais
@@ -337,7 +388,7 @@ main section {
 }
 
 .hero-section {
-    background: linear-gradient(rgba(135, 206, 235, 0.6), rgba(255, 255, 240, 0.6)), url('https://i.ibb.co/whq4MRgV/Facebook-4251806751788979-image1.webp') center center/cover no-repeat;
+    background: linear-gradient(rgba(135, 206, 235, 0.6), rgba(255, 255, 240, 0.6)), url('https://i.ibb.co/93Hvky5h/525765895-122177482934329012-8382783682429759530-n.jpg') center center/cover no-repeat;
     color: var(--color-text-dark);
     text-align: center;
     padding: 100px 0;
@@ -383,10 +434,12 @@ main section {
     max-width: 100%;
     height: auto;
     border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
+
 /* Seções de Informação */
+
 .info-section {
     padding: 60px 0;
 }
@@ -395,9 +448,11 @@ main section {
     background-color: var(--color-background-gray);
 }
 
+
 /* ============================================
     Cards de Cursos
     ============================================ */
+
 .course-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -439,9 +494,11 @@ main section {
     flex-grow: 1;
 }
 
+
 /* ============================================
     Passo a Passo de Matrícula
     ============================================ */
+
 .step-by-step {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -459,7 +516,10 @@ main section {
     align-items: center;
 }
 
+
 /* Estilos para o mapa de localizações */
+
+
 /* mapa removido — se precisar reintroduzir, adicione regras aqui */
 
 .step-number {
@@ -488,9 +548,11 @@ main section {
     color: var(--color-text-muted);
 }
 
+
 /* ============================================
     Tabela de Preços
     ============================================ */
+
 .price-table {
     overflow-x: auto;
 }
@@ -538,12 +600,16 @@ main section {
     color: var(--color-text-dark);
 }
 
-.gestescola-area, .location-content, .contact-info {
+.gestescola-area,
+.location-content,
+.contact-info {
     text-align: center;
     margin-top: 30px;
 }
 
-.gestescola-area p, .location-content p, .contact-info p {
+.gestescola-area p,
+.location-content p,
+.contact-info p {
     color: var(--color-text-muted);
     margin-bottom: 25px;
     font-size: 1.1em;
@@ -555,13 +621,16 @@ main section {
     justify-content: center;
     gap: 10px;
 }
+
 .contact-info p i {
     color: var(--color-accent-blue);
 }
 
+
 /* ============================================
     Rodapé
     ============================================ */
+
 .main-footer {
     background-color: var(--color-text-dark);
     color: var(--color-background-gray);
@@ -585,9 +654,11 @@ main section {
     color: var(--color-accent-blue);
 }
 
+
 /* ============================================
     Botões Genéricos
     ============================================ */
+
 .btn {
     display: inline-block;
     padding: 12px 25px;
@@ -623,7 +694,9 @@ main section {
     transform: translateY(-3px);
 }
 
+
 /* Botão de Mapa */
+
 .map-btn {
     background-color: var(--color-primary-light);
     color: var(--color-text-dark);
@@ -636,10 +709,14 @@ main section {
     border-color: var(--color-accent-blue);
 }
 
+
 /* ============================================
     Responsividade
     ============================================ */
+
+
 /* Estilos para telas grandes (desktop) */
+
 .nav-menu {
     list-style: none;
     display: flex;
@@ -648,21 +725,21 @@ main section {
     padding: 0;
 }
 
+
 /* Mobile-first */
+
 @media (max-width: 992px) {
     .logo h1 {
         font-size: 1.5em;
     }
-    
     .hero-content h2 {
         font-size: 2.8em;
     }
-    
     .hero-content p {
         font-size: 1.1em;
     }
-
-    h2, h3 {
+    h2,
+    h3 {
         font-size: 2em;
     }
 }
@@ -671,8 +748,8 @@ main section {
     .header-content {
         flex-wrap: wrap;
     }
-    
-    .logo, .theme-switch-wrapper {
+    .logo,
+    .theme-switch-wrapper {
         margin-bottom: 10px;
         order: 1;
         width: 50%;
@@ -681,24 +758,23 @@ main section {
     .logo {
         justify-content: flex-start;
     }
-
     .theme-switch-wrapper {
         justify-content: flex-end;
     }
-    
     .main-nav {
         order: 3;
         width: 100%;
     }
-    
     .nav-toggle {
-        display: block; /* Mostra o botão do menu */
+        display: block;
+        /* Mostra o botão do menu */
         order: 2;
-        margin-left: auto; /* Empurra o botão para a direita */
+        margin-left: auto;
+        /* Empurra o botão para a direita */
     }
-    
     .nav-menu {
-        display: none; /* Esconde o menu por padrão */
+        display: none;
+        /* Esconde o menu por padrão */
         flex-direction: column;
         background-color: var(--color-background-light);
         width: 100%;
@@ -706,52 +782,47 @@ main section {
         top: 80px;
         left: 0;
         padding-bottom: 20px;
-        box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
     }
-    
     .nav-menu.active {
-        display: flex; /* Mostra o menu quando ativo */
+        display: flex;
+        /* Mostra o menu quando ativo */
     }
-    
     .nav-menu li {
         margin: 10px 0;
     }
-    
     .nav-menu a {
         padding: 10px 0;
     }
-    
     .hero-section {
         padding: 60px 0;
         min-height: auto;
         background-position: center;
     }
-    
     .hero-content {
         padding: 0 20px;
     }
-    
     .hero-content h2 {
         font-size: 2.2em;
     }
-    
     .hero-content p {
         font-size: 1em;
     }
-    
     .btn {
         padding: 12px 20px;
         font-size: 0.9em;
     }
-    
-    .course-grid, .step-by-step {
+    .course-grid,
+    .step-by-step {
         grid-template-columns: 1fr;
     }
 }
 
+
 /* ============================================
     Modo Escuro (Ajustes de Cores)
     ============================================ */
+
 body.dark-mode .main-header {
     background-color: var(--color-background-light);
 }
@@ -777,7 +848,7 @@ body.dark-mode .nav-toggle {
 }
 
 body.dark-mode .hero-section {
-    background: linear-gradient(rgba(44, 62, 80, 0.6), rgba(44, 62, 80, 0.6)), url('https://i.ibb.co/whq4MRgV/Facebook-4251806751788979-image1.webp') center center/cover no-repeat;
+    background: linear-gradient(rgba(44, 62, 80, 0.6), rgba(44, 62, 80, 0.6)), url('https://i.ibb.co/93Hvky5h/525765895-122177482934329012-8382783682429759530-n.jpg') center center/cover no-repeat;
     color: var(--color-text-dark);
 }
 
@@ -793,7 +864,8 @@ body.dark-mode .price-table thead th {
 }
 
 body.dark-mode .price-table tbody tr:hover {
-    background-color: #3f5872; /* Um tom um pouco mais claro para hover no escuro */
+    background-color: #3f5872;
+    /* Um tom um pouco mais claro para hover no escuro */
 }
 
 body.dark-mode .btn.secondary-btn {
